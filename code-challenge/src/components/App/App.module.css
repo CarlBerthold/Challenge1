@@ -1,0 +1,24 @@
+.root {
+  font-size: 32px;
+}
+
+.content {
+  display: flex;
+}
+
+.jokeboxWrapper {
+  width: 50%;
+  height: 100vh;
+  border-right: 2px solid black;
+}
+
+.favouritesWrapper {
+  flex-grow: 1;
+}
+
+.contentHeader {
+  text-align: center;
+  border-bottom: 2px solid;
+  margin: 0;
+  text-align: center;
+}
