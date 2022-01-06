@@ -64,21 +64,35 @@ const endPointv2 = () => {
 export function getAllJokes() {
   axios.get("http://localhost:3000/api/v1/jokes")
       .then((response) => {
-        const jokesArray = [(response.data)]
-        console.log(jokesArray)
-        const jokesWithoutBarista = jokesArray.map(e => jokesArray[3])
-        console.log(jokesWithoutBarista)
-        return jokesWithoutBarista;
+        const jokesArray = (response.data)
+        let myJokes = jokesArray.filter((myJokes:any) => {
+          if(myJokes.type!=='barista') {
+          console.log(myJokes)
+          //return myJokes
+          //console.log(myJokes)
+          }
+          return myJokes
+          //console.log(myJokes)  
+        });
         
 
-
-        // const Jokes=jokesArray.map(noBarista=> {
-        //   console.log("")
-        //   return [noBarista]
-        })
       
-      .catch((err)=>console.log(err))
-    ;
+        
+        // const jokes=jokesArray.filter(jokesArray.type!=="barista")
+        // console.log(jokes)
+        
+        // const filteredJokes = jokesArray.filter(function(joke) {
+	      // return joke.type !== “barista”;
+        // });
+        
+        //const filteredJokes = jokesArray.filter(joke => joke.type!=="barista")
+        //console.log(filteredJokes)
+        //return filteredJokes
+        })
+        
+      
+      .catch((err)=>console.log(err));
+      
 }
 
 
